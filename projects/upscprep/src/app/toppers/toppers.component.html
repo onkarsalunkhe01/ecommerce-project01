@@ -1,0 +1,27 @@
+<h1>Our Toppers</h1>
+<div id="category">
+    <div></div>
+</div>
+<div id="toppersCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="d-flex">
+                <div class="topper-card" *ngFor="let topper of toppers; let i = index">
+                    <img [src]="topper.photo" [alt]="topper.name" class="rounded-circle">
+                    <h3>{{ topper.name }}</h3>
+                    <p>{{ topper.description }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Additional carousel-items if needed -->
+    </div>
+
+    <!-- Controls -->
+    <a class="carousel-control-prev" href="#toppersCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#toppersCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div>

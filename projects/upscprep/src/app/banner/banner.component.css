@@ -1,0 +1,33 @@
+.banner{
+    display: flex;
+    margin-left: 10%;
+    
+}
+.achievments{
+    display: flex;
+}
+.secondblock-achievments{
+    margin-left: 10%;
+    color: #fbae09;
+    
+
+}
+
+.bannerphoto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8%;
+    
+}
+.firstblock-achievments{
+    color: #fbae09;
+}
+.banner-text h1 span,.banner-text h4 span{
+    color: #fbae09;
+
+}
+.banner-text{
+    margin-top: 6%;
+    margin-left: 2%;
+}

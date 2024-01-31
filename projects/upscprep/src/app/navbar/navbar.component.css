@@ -1,0 +1,28 @@
+.logo{
+    margin-left:3% ;
+}
+.navbarcontent li a{
+    font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 20px;
+  
+    
+}
+.navbar{
+    background-color: white;
+}
+.navbarcontent{
+    margin-right: 3%;
+}
+.login li a{
+    background-color: #fbae09;
+    border-radius: 5px  ;
+    color: white;
+}
+.navbarcontent li a:hover{
+    background-color: #42c712;
+    border-radius: 5px  ;
+    color: white;
+    transition: 500ms;
+}

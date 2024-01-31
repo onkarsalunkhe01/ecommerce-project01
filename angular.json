@@ -3,5 +3,102 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "upscprep": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/upscprep",
+      "sourceRoot": "projects/upscprep/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/upscprep",
+            "index": "projects/upscprep/src/index.html",
+            "main": "projects/upscprep/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/upscprep/tsconfig.app.json",
+            "assets": [
+              "projects/upscprep/src/favicon.ico",
+              "projects/upscprep/src/assets"
+            ],
+            "styles": [
+              
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "upscprep:build:production"
+            },
+            "development": {
+              "browserTarget": "upscprep:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "upscprep:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/upscprep/tsconfig.spec.json",
+            "assets": [
+              "projects/upscprep/src/favicon.ico",
+              "projects/upscprep/src/assets"
+            ],
+            "styles": [
+              "projects/upscprep/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "f575764a-14f0-471e-8200-b50db0b4068e"
   }
 }
