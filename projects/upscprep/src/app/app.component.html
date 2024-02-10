@@ -1,4 +1,88 @@
-<app-navbar></app-navbar>
-<app-banner></app-banner>
-<app-coursesindex></app-coursesindex>
-<app-toppers></app-toppers>
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand logo" href="#">
+      <img src="../../assets/Upscpreplogo.png" alt="Logo" style="height: 40px" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav navbarcontent">
+        <li class="nav-item">
+            <button (click)="selectButton('Home')" id="buttonnavbar">Home</button>
+        </li>
+        
+        <li class="nav-item">
+          <button (click)="selectButton('Contact Us')" id="buttonnavbar">Contact Us</button>
+      </li>
+        <li class="nav-item">
+            <button (click)="selectButton('About Us')" id="buttonnavbar">About Us</button>
+        </li>
+        <div class="login">
+          <li class="nav-item">
+            
+            <button (click)="selectButton('Login')" id="loginbutton">Login</button>
+          </li>
+        </div>
+        <div class="login">
+          <li class="nav-item">
+            
+            <button (click)="selectButton('Register')" id="loginbutton">Register</button>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div [ngSwitch]="selectedButton">
+    <div *ngSwitchDefault><app-banner></app-banner></div>
+    <div *ngSwitchCase="'Home'">
+    <app-banner></app-banner>
+  </div>
+    
+    <div *ngSwitchCase="'Contact Us'">
+      <app-contactus></app-contactus>
+    </div>
+    <div *ngSwitchCase="'About Us'">
+    <app-aboutus></app-aboutus>
+    </div>
+    
+  <div *ngSwitchCase="'Login'">
+         <app-loginpage></app-loginpage> 
+  </div>
+
+  <div *ngSwitchCase="'Register'">
+    <app-register></app-register> 
+</div>
+  </div>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<app-footer></app-footer>
+
+

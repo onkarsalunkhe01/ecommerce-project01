@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'upscprep';
-  dropdownOpen = false;
-
-  toggleDropdown(open: boolean) {
-    this.dropdownOpen = open;
-  }
   
+
+  
+  selectedButton: string = ''; // Initialize with an empty string or any default value
+
+  selectButton(button: string) {
+    this.selectedButton = button;
+}
 }

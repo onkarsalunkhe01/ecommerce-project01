@@ -1,30 +1,116 @@
 <div class="container-fluid banner">
-    <div class="banner-text">
-        <h1>We can't clear <span>UPSC</span> for you.</h1>
-        <h4>But with our <span>personalised mentor</span> support,</h4>
-        <h4>you'll be ready to do it yourself.</h4>
-        <br>
-        <div class="achievments">
-            <div class="firstblock-achievments">
-                <p> <i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; 100+ Topper in Last 3 Years</p>
+  <div class="banner-text">
+    <h1>We can't clear <span>&nbsp;UPSC&nbsp;</span> for you.</h1>
+    <h4>But with our <span>personalised mentor</span> support,</h4>
+    <h4>you'll be ready to do it yourself.</h4>
+    <br />
+    <div class="achievments">
+      <div class="firstblock-achievments">
+        <p>
+          <i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; 100+ Topper
+          in Last 3 Years
+        </p>
 
-                <p><i class="fa fa-star" aria-hidden="true"></i> &nbsp;4.7+ Course ratings</p>
-            </div>
-            <div class="secondblock-achievments">
-                
-                <p><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp; 54+  Final selections in 2022</p>
-                
-                <p><i class="fa fa-users" aria-hidden="true"> </i>
-                     &nbsp;50000+ Students mentored</p>
-            </div>
+        <p>
+          <i class="fa fa-star" aria-hidden="true"></i> &nbsp;4.7+ Course
+          ratings
+        </p>
+      </div>
+      <div class="secondblock-achievments">
+        <p>
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp; 54+
+          Final selections in 2022
+        </p>
 
-        </div>
-
+        <p>
+          <i class="fa fa-users" aria-hidden="true"> </i> &nbsp;50000+ Students
+          mentored
+        </p>
+      </div>
     </div>
-    <div class="bannerphoto">
-        <img src="../../assets/banner photo.jpg" height="450" width="auto"  alt="achievments">
-    </div>
-
-    
-      
+  </div>
+  <div class="bannerphoto">
+    <img
+      src="../../assets/banner photo.jpg"
+      height="450"
+      width="auto"
+      alt="achievments"
+    />
+  </div>
 </div>
+
+<h1>Our Courses</h1>
+<div id="category">
+  <button (click)="setCategory('all')">All</button>
+  <button (click)="setCategory('prelims')">Prelims</button>
+  <button (click)="setCategory('mains')">Mains</button>
+</div>
+<div id="card">
+  <div class="card-container">
+    <div *ngFor="let card of cards">
+      <div *ngIf="filterCards(card)" class="card" style="width: 18rem">
+        <img
+          [src]="card.imageUrl"
+          class="card-img-top"
+          alt="{{ card.title }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+          <a href="#" class="btn btn-primary">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<h1>Our Toppers</h1>
+<div id="category">
+    <div></div>
+</div>
+<br>
+<div id="toppersCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div *ngFor="let group of topperGroups; let isFirst = first" 
+             class="carousel-item" 
+             [class.active]="isFirst">
+            <div class="d-flex" id="topper">
+                <div class="topper-card" *ngFor="let topper of group">
+                    <img [src]="topper.photo" [alt]="topper.name" class="rounded-circle">
+                    <h3>{{ topper.name }}</h3>
+                    <p>{{ topper.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#toppersCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#toppersCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div>
+<h1>Your Feedback Matters</h1>
+<div id="category">
+    <div>
+        
+    </div>
+</div>
+<br>
+<div class="container feedback">
+    
+    <form (ngSubmit)="submitFeedback()" #feedbackForm="ngForm">
+      <div class="form-group">
+        <label id="feedbacktext" for="fullName">Full Name:</label>
+        <input type="text" id="fullName" class="form-control" [(ngModel)]="feedback.fullName" name="fullName" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label id="feedbacktext" for="feedback">Feedback:</label>
+        <textarea id="feedback" class="form-control" rows="4" [(ngModel)]="feedback.content" name="feedback" required></textarea>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary" [disabled]="!feedbackForm.valid">Submit Feedback</button>
+    </form>
+  </div>
+

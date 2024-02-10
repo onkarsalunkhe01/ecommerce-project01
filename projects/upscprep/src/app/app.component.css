@@ -35,4 +35,48 @@
     border: none;
     cursor: pointer;
   }
-  
+  .logo{
+    margin-left:3% ;
+}
+#buttonnavbar{
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+#loginbutton{
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  background-color: #42c712;
+}
+#buttonnavbar:hover{
+  background-color: #42c712;
+    border-radius: 5px  ;
+    color: white;
+    transition: 500ms;
+}
+
+.navbar{
+    background-color: white;
+}
+.navbarcontent{
+    margin-right: 3%;
+}
+.login li button{
+    background-color: #fbae09;
+    border-radius: 5px  ;
+    color: black;
+}
+.navbarcontent li button:hover{
+    background-color: #42c712;
+    border-radius: 5px  ;
+    color: white;
+    transition: 500ms;
+}

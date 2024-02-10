@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "upscprep:build:production"
+              "buildTarget": "upscprep:build:production"
             },
             "development": {
-              "browserTarget": "upscprep:build:development"
+              "buildTarget": "upscprep:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "upscprep:build"
+            "buildTarget": "upscprep:build"
           }
         },
         "test": {

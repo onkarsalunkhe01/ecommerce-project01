@@ -1,0 +1,51 @@
+.login{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 5%;
+
+margin-left: 15%;
+
+
+width: 70%;
+height: 70%;
+}
+
+#loginphoto{
+    width: 50%;
+    height: auto;
+}
+.logindetails{
+    height: 540px;
+    width: 500px;
+    background-color: #f8f7ed;
+    margin-left: -360px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#submit{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  
+}
+#submit button{
+    background-color: #003350;
+    border: none;
+  outline: none;
+  width: 291px;
+}
+
+
+#Register{
+    border: none;
+  outline: none;
+  background-color: #f8f7ed;
+  color: blue;
+}
